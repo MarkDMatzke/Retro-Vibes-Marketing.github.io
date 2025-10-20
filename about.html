@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Vibes - About Us</title>
+
+  <link rel="stylesheet" href="RetroStyles.css" />
+
+  
+
+</head>
+
+
+<body>
+<div id="particles-js"></div>
+
+  <div id="site-content">
+    <header>
+      <h1>About Us</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="questionnaire.html">Questionnaire</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <main>
+  <p><span class="word-box">Retro</span> Vibes is a fun, interactive website bringing back <span class="word-box">retro</span> aesthetics, <span class="word-box">neon</span> glow, and engaging experiences for users who love nostalgia. We focus on creating simple, beautiful web experiences enhanced with retro particle effects.</p>
+    </main>
+
+    <footer>
+      <h2>Sadly this is us!</h2>
+      <p>&copy; 2025 Retro Vibes. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- Particle JS Initialization -->
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 400, density: { enable: true, value_area: 700 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.7, random: true },
+        size: { value: 5, random: true },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.5, width: 1 },
+        move: { enable: true, speed: 5, out_mode: "out" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "repulse" }, resize: true },
+        modes: { grab: { distance: 200, line_linked: { opacity: 1 } } }
+      },
+      retina_detect: true
+    });
+  </script>
+  <!-- Skip splash when navigating from internal pages -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var homeLinks = document.querySelectorAll('a[href\x3d"index.html"], a[href\x3d"./"], a[href\x3d"/"]');
+      homeLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { sessionStorage.setItem('skipSplash', 'true'); } catch (e) { /* ignore */ }
+        });
+      });
+    });
+  </script>
+  
+</body>
+</html>

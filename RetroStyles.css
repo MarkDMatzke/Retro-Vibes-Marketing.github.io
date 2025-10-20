@@ -1,0 +1,262 @@
+/* === Retro Vibes – Questionnaire Styles === */
+
+/* Global Reset */
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: transparent;      /* allow gradient behind */
+  color: #E2EAF4;
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+}
+
+/* Particle Background */
+#particles-js {
+  position: fixed;               /* stay fixed while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff7043, #ffcc00);
+  z-index: -1;                   /* behind content */
+}
+
+/* Main Layout */
+/* Ensure the site content wrapper is centered and constrained */
+#site-content {
+  width: 100%;
+  max-width: 960px;
+  margin: auto;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#site-content header,
+#site-content main,
+#site-content footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  /* translucent darker orange that matches the header theme */
+  background: rgba(255, 112, 67, 0.15);  /* lighter background */
+  backdrop-filter: blur(3px);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 15px auto;
+  max-width: 650px;  /* make boxes more compact */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgba(255, 140, 50, 0.4);  /* subtle orange border */
+  box-shadow: 
+    0 0 15px rgba(255, 112, 67, 0.2),
+    inset 0 0 20px rgba(255, 112, 67, 0.1);  /* inner and outer glow */
+  transition: box-shadow 0.3s ease;
+}
+
+#site-content header:hover,
+#site-content main:hover,
+#site-content footer:hover {
+  box-shadow: 
+    0 0 20px rgba(255, 112, 67, 0.3),
+    inset 0 0 25px rgba(255, 112, 67, 0.15);
+}
+
+/* Navigation */
+#site-content nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #E2EAF4;
+  text-shadow: 0 0 6px #ff7043, 0 0 12px #ffcc00;
+}
+
+#site-content nav a:link,
+#site-content nav a:visited,
+#site-content nav a:hover,
+#site-content nav a:active {
+  color: #E2EAF4;  /* keeps consistent color */
+}
+
+#site-content nav a.active {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2 {
+  font-size: 2.4em;
+  margin-bottom: 15px;
+  margin-top: 0;
+  color: #ffffff;
+  text-shadow: 
+    0 0 5px #ffffff,
+    0 0 10px #ff7043,
+    0 0 20px #ffcc00,
+    0 0 30px #ff7043,
+    0 0 40px #ff9900;
+  letter-spacing: 2px;
+  font-weight: bold;
+  -webkit-text-stroke: 1px rgb(255, 112, 67);
+}
+
+/* Put a rounded translucent box behind headings to match the site panels */
+#site-content header h1,
+#site-content footer h2 {
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(255, 112, 67, .85); /* match button color, slightly more opaque */
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 22px rgba(255, 112, 67, 0.45),
+    inset 0 0 15px rgba(255, 140, 50, 0.22); /* match button glow */
+  margin: 6px 0;
+  border: .15rem solid rgb(255, 81, 0);
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input, textarea, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+textarea {
+  text-align: center; /* Centers the text inside the textarea */
+}
+
+button {
+  background: rgb(255, 112, 67);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ff5722;
+}
+
+/* Content text styling */
+#site-content main p,
+#site-content footer p {
+  font-size: 1.1em;
+  color: #edf3fa;  /* brighter blue-white text */
+  margin: 0 auto;
+  text-align: center;
+  max-width: 450px;
+  line-height: 1.6;
+  padding: 10px 20px;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-shadow: 
+    0 0 15px rgba(255, 140, 50, 0.5),
+    0 1px 3px rgba(255, 166, 77, 0.4);  /* brighter orange glow */
+  font-weight: 500;
+}
+
+/* Inline boxed word style for small highlighted words */
+.word-box {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 0 4px;
+  /* subtle dark background to keep contrast */
+  background: rgba(0,0,0,0.28);
+  color: #fff;
+  border-radius: 6px;
+  /* clear orange border */
+  border: 2px solid rgba(255,140,50,0.95);
+  /* soft orange inner glow to make the border pop */
+  box-shadow: inset 0 0 14px rgba(255,140,50,0.06), 0 0 10px rgba(255,140,50,0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.word-box:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 0 16px rgba(255,140,50,0.08), 0 10px 30px rgba(255,140,50,0.32);
+}
+
+/* Splash screen styles (moved from index.html) */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0,0,0,0.15);
+  z-index: 10;
+  transition: opacity 1s ease;
+}
+
+#splash-screen #enter-btn {
+  position: relative; /* for pseudo-element */
+  background: linear-gradient(90deg, rgba(255,112,67,0.5), rgba(255,204,0,0.5));
+  color: #ffffff;
+  /* layered neon text glow */
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.9),
+    0 0 12px rgba(255,204,0,0.6),
+    0 0 24px rgba(255,112,67,0.45);
+  border: 2px solid rgba(255,204,0,0.95);
+  padding: 18px 44px;
+  font-size: 2rem;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 18px;
+  transition: 0.25s box-shadow, 0.25s transform, 0.25s background;
+  box-shadow: 0 8px 28px rgba(255, 112, 67, 0.22);
+  display: inline-block;
+  width: auto;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* soft outer halo using pseudo-element */
+#splash-screen #enter-btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 60px);
+  height: calc(100% + 40px);
+  border-radius: 28px;
+  background: radial-gradient(circle, rgba(255,112,67,0.18) 0%, rgba(255,112,67,0.06) 50%, transparent 60%);
+  filter: blur(12px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+#splash-screen #enter-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(255, 112, 67, 0.30);
+  background: linear-gradient(90deg, rgba(255,87,34,0.98), rgba(255,204,0,0.98));
+}
