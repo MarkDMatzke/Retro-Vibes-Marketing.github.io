@@ -260,3 +260,17 @@ button:hover {
   box-shadow: 0 12px 36px rgba(255, 112, 67, 0.30);
   background: linear-gradient(90deg, rgba(255,87,34,0.98), rgba(255,204,0,0.98));
 }
+/* Responses List Styling */
+.responses-list {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.response-item {
+  margin-bottom: 1.5em; /* Adds space between each response item */
+}
+
+.response-item > *:first-child { /* Assumes the first child is the response content */
+  margin-bottom: 1em; /* Adds space between the response content and the time */
+}
