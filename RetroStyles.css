@@ -274,3 +274,8 @@ button:hover {
 .response-item > *:first-child { /* Assumes the first child is the response content */
   margin-bottom: 1em; /* Adds space between the response content and the time */
 }
+
+/* Textarea Styling */
+textarea {
+  text-align: center; /* Centers the text inside the textarea */
+}
